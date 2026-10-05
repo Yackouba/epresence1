@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connexion – ePrésence</title>
+  <link rel="stylesheet" href="connexion.css">
+</head>
+<body>
+
+  <main class="login-page">
+    <a href="index.html" class="back-link" aria-label="Retour à l'accueil">← Accueil</a>
+
+    <section class="login-card" aria-labelledby="titre-connexion">
+      <a href="index.html" class="logo" aria-label="ePrésence – accueil">
+        <svg class="logo-icon" viewBox="0 0 48 40" aria-hidden="true">
+          <path d="M24 2 2 13l22 11 22-11L24 2Z" fill="#1d5fd8"/>
+          <path d="M11 20v9c0 3 6 7 13 7s13-4 13-7v-9l-13 6.5L11 20Z" fill="#2f7bff"/>
+          <path d="M43 15v12" stroke="#f5b324" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="43" cy="29" r="2.4" fill="#f5b324"/>
+        </svg>
+        <span class="logo-text">
+          <strong>ePrésence</strong>
+          <small>Gestion des présences scolaires</small>
+        </span>
+      </a>
+
+      <div class="form-box">
+        <h1 id="titre-connexion">Connexion</h1>
+        <p class="subtitle">Accédez à votre espace</p>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="role">Rôle</label>
+            <div class="select-wrap">
+              <select id="role" name="role">
+                <option value="admin">Administrateur</option>
+                <option value="enseignant" selected>Enseignant</option>
+                <option value="etudiant">Étudiant</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="identifiant">Identifiant ou email</label>
+            <input type="text" id="identifiant" name="identifiant" value="enseignant@ecole.local" autocomplete="username" required>
+          </div>
+
+          <div class="field">
+            <label for="motdepasse">Mot de passe</label>
+            <div class="password-wrap">
+              <input type="password" id="motdepasse" name="motdepasse" value="12345678" autocomplete="current-password" required>
+              <button type="button" class="eye" id="toggle-pwd" aria-label="Afficher le mot de passe" aria-pressed="false">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <label class="remember">
+            <input type="checkbox" id="souvenir" checked>
+            <span>Se souvenir de moi</span>
+          </label>
+
+          <p class="form-error" id="form-error" role="alert" hidden></p>
+
+          <button type="submit" class="btn-login">Se connecter</button>
+        </form>
+
+      </div>
+    </section>
+
+    <footer class="login-footer">ePrésence fait par Yack-Service © 2026 · Tous droits réservés</footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="auth.js"></script>
+  <script src="etablissement.js"></script>
+  <script src="connexion.js"></script>
+</body>
+</html>

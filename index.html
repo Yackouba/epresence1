@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ePrésence – Gestion des présences scolaires</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== EN-TÊTE ========== -->
+  <header class="header">
+    <a href="index.html" class="logo" aria-label="ePrésence – accueil">
+      <svg class="logo-icon" viewBox="0 0 48 40" aria-hidden="true">
+        <path d="M24 2 2 13l22 11 22-11L24 2Z" fill="#1d5fd8"/>
+        <path d="M11 20v9c0 3 6 7 13 7s13-4 13-7v-9l-13 6.5L11 20Z" fill="#2f7bff"/>
+        <path d="M43 15v12" stroke="#f5b324" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="43" cy="29" r="2.4" fill="#f5b324"/>
+      </svg>
+      <span class="logo-text">
+        <strong>ePrésence</strong>
+        <small>Gestion des présences scolaires</small>
+      </span>
+    </a>
+
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav" aria-label="Navigation principale">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#avantages">Avantages</a>
+      <a href="connexion.html">Connexion</a>
+    </nav>
+  </header>
+
+  <!-- ========== HÉROS ========== -->
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-content">
+        <h1>Une présence bien gérée,<br>une école plus performante</h1>
+        <p>
+          ePrésence est une solution complète pour la gestion
+          des présences des étudiants, des cours et des emplois du temps.
+          Simple, sécurisé et adapté à votre établissement.
+        </p>
+        <div class="hero-actions">
+          <a href="connexion.html" class="btn btn-primary">Se connecter</a>
+          <a href="#fonctionnalites" class="btn btn-outline">Découvrir</a>
+        </div>
+      </div>
+
+      <!-- Carte flottante des fonctionnalités -->
+      
+    </section>
+
+    <!-- ========== PROFILS / AVANTAGES ========== -->
+    <section class="audiences" id="avantages" aria-label="Avantages par profil">
+      <article class="audience">
+        <span class="ico ico-lg">
+          <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6M9 11h.01M15 11h.01"/></svg>
+        </span>
+        <div>
+          <h3>Pour l'administration</h3>
+          <p>Gérez les filières, classes, étudiants…</p>
+        </div>
+      </article>
+
+      <article class="audience">
+        <span class="ico ico-lg">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="m9 10 2 2 4-4"/></svg>
+        </span>
+        <div>
+          <h3>Pour les enseignants</h3>
+          <p>Appel et suivi des présences</p>
+        </div>
+      </article>
+
+      <article class="audience">
+        <span class="ico ico-lg">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+        </span>
+        <div>
+          <h3>Pour les étudiants</h3>
+          <p>Consulter son historique</p>
+        </div>
+      </article>
+
+      <article class="audience">
+        <span class="ico ico-lg">
+          <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M12 11v6m0 0-2.5-2.5M12 17l2.5-2.5"/></svg>
+        </span>
+        <div>
+          <h3>Rapports</h3>
+          <p>Export Excel / PDF</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <strong data-etab="nom">École Supérieure de Commerce  et d'Informatique de Gestion</strong>
+    <span data-etab="adresse">Ouagadougou, Burkina Faso</span>
+    <a data-etab="tel" data-lien="tel:" href="tel:+22625343915">+226 25 34 39 15</a>
+    <a data-etab="email" data-lien="mailto:" href="mailto:contact@esco-iges.com">contact@esco-iges.com</a>
+  </footer>
+
+  <script src="etablissement.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

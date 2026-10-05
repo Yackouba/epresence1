@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestion des étudiants – Administrateur – ePrésence</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body>
+
+  <!-- Icônes réutilisables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-dash" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="8" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="15" width="7" height="6" rx="1.5"/></symbol>
+      <symbol id="i-filiere" viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></symbol>
+      <symbol id="i-classe" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+      <symbol id="i-etudiant" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M17 14c2.6 0 4 2 4 5"/></symbol>
+      <symbol id="i-enseignant" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M9 14.5 12 18l3-3.5"/></symbol>
+      <symbol id="i-cours" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5Z"/><path d="M4 19a2 2 0 0 1 2-2h13M9 7h6"/></symbol>
+      <symbol id="i-edt" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+      <symbol id="i-seance" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+      <symbol id="i-rapport" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+      <symbol id="i-param" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M12 9v8M8 13h8"/></symbol>
+      <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5Z"/></symbol>
+      <symbol id="i-user-plus" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 21c0-3.9 3.1-7 7-7s7 3.1 7 7M19 8v6M16 11h6"/></symbol>
+      <symbol id="i-add" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 11v6M14 11v6"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="layout">
+
+    <!-- ========== BARRE LATÉRALE ========== -->
+    <aside class="sidebar" id="sidebar" aria-label="Menu principal">
+      <a href="index.html" class="brand">
+        <svg class="brand-icon" viewBox="0 0 48 40" aria-hidden="true">
+          <path d="M24 2 2 13l22 11 22-11L24 2Z" fill="#ffffff"/>
+          <path d="M11 20v9c0 3 6 7 13 7s13-4 13-7v-9l-13 6.5L11 20Z" fill="#8db6ff"/>
+          <path d="M43 15v12" stroke="#f5b324" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="43" cy="29" r="2.4" fill="#f5b324"/>
+        </svg>
+        <span><strong>ePrésence</strong><small>Gestion des présences scolaires</small></span>
+      </a>
+
+      <nav class="menu">
+        <a href="tableau-de-bord.html"><svg><use href="#i-dash"/></svg>Tableau de bord</a>
+        <a href="filieres.html"><svg><use href="#i-filiere"/></svg>Filières</a>
+        <a href="classes.html"><svg><use href="#i-classe"/></svg>Classes</a>
+        <a href="etudiants.html" class="active" aria-current="page"><svg><use href="#i-etudiant"/></svg>Étudiants</a>
+        <a href="enseignants.html"><svg><use href="#i-enseignant"/></svg>Enseignants</a>
+        <a href="cours.html"><svg><use href="#i-cours"/></svg>Cours</a>
+        <a href="emploi-du-temps.html"><svg><use href="#i-edt"/></svg>Emploi du temps</a>
+        <a href="seances.html"><svg><use href="#i-seance"/></svg>Séances</a>
+        <a href="rapports.html"><svg><use href="#i-rapport"/></svg>Rapports</a>
+        <a href="parametres.html"><svg><use href="#i-param"/></svg>Paramètres</a>
+      </nav>
+
+      <a href="connexion.html" class="menu-logout" id="logout"><svg><use href="#i-logout"/></svg>Déconnexion</a>
+    </aside>
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- ========== CONTENU ========== -->
+    <div class="main">
+      <header class="topbar">
+        <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="sidebar">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+
+        <div class="user" id="user-menu">
+          <button class="user-btn" id="user-btn" aria-haspopup="true" aria-expanded="false">
+            <span class="avatar" id="avatar">A</span>
+            <span class="user-info">
+              <strong id="user-name">Administrateur</strong>
+              <small>Admin</small>
+            </span>
+            <svg class="chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="dropdown" id="dropdown" hidden>
+            <a href="parametres.html">Paramètres</a>
+            <a href="connexion.html" id="logout-top">Déconnexion</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="card" aria-labelledby="titre">
+          <h1 class="card-title" id="titre">Liste des étudiants</h1>
+
+          <div class="toolbar">
+            <div class="search">
+              <input type="search" id="search" placeholder="Rechercher un étudiant..." aria-label="Rechercher un étudiant" autocomplete="off">
+            </div>
+            <button type="button" class="btn-primary" id="btn-add"><svg viewBox="0 0 24 24"><use href="#i-add"/></svg>Ajouter un étudiant</button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr><th>Matricule</th><th>Nom &amp; Prénom</th><th>Classe</th><th>Filière</th><th>Statut</th><th>Actions</th></tr>
+              </thead>
+              <tbody id="rows"></tbody>
+            </table>
+          </div>
+
+          <div class="table-footer">
+            <nav class="pagination" id="pagination" aria-label="Pagination"></nav>
+            <div class="per-page select-box">
+              <select id="per-page" aria-label="Étudiants par page">
+                <option value="5" selected>5 / page</option>
+                <option value="10">10 / page</option>
+                <option value="20">20 / page</option>
+              </select>
+            </div>
+          </div>
+        </section>
+      </main>
+
+    </div>
+  </div>
+
+  <dialog class="modal" id="dlg" aria-labelledby="dlg-title">
+    <form id="form" novalidate>
+      <div class="modal-head">
+        <h2 id="dlg-title">Ajouter un étudiant</h2>
+        <button type="button" class="modal-close" data-close aria-label="Fermer">×</button>
+      </div>
+      <div class="form-grid">
+        <div class="f full"><label for="f-matricule">Matricule</label><input id="f-matricule" type="text"></div>
+        <div class="f"><label for="f-nom">Nom</label><input id="f-nom" type="text" autocomplete="off"></div>
+        <div class="f"><label for="f-prenom">Prénom</label><input id="f-prenom" type="text" autocomplete="off"></div>
+        <div class="f"><label for="f-classe">Classe</label><select id="f-classe"><option value="L1A">L1A</option><option value="L1B">L1B</option><option value="L2A">L2A</option><option value="L2B">L2B</option><option value="L3A">L3A</option></select></div>
+        <div class="f"><label for="f-filiere">Filière</label>
+          <select id="f-filiere"><option>Réseaux</option><option>Informatique</option><option>Cybersécurité</option></select></div>
+        <div class="f full"><label for="f-statut">Statut</label>
+          <select id="f-statut"><option value="actif">Actif</option><option value="inactif">Inactif</option></select></div>
+      </div>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <div class="modal-foot">
+        <button type="button" class="btn-ghost" data-close>Fermer</button>
+        <button type="submit" class="btn-primary" id="f-submit">Enregistrer</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="modal modal-sm" id="dlg-del" aria-labelledby="del-title">
+    <div class="modal-body">
+      <div class="modal-head"><h2 id="del-title">Supprimer l'étudiant ?</h2></div>
+      <p class="modal-sub"><strong id="del-name"></strong> sera retiré de la liste. Cette action est définitive.</p>
+      <div class="modal-foot">
+        <button type="button" class="btn-ghost" data-close>Annuler</button>
+        <button type="button" class="btn-danger" id="del-confirm">Supprimer</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="auth.js"></script>
+  <script src="etablissement.js"></script>
+  <script src="layout.js"></script>
+  <script src="etudiants.js"></script>
+</body>
+</html>
