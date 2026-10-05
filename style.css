@@ -80,7 +80,7 @@ ul { list-style: none; }
 .hero::before {
   content: ""; position: absolute; z-index: -2;
   top: 0; right: 0; bottom: 0; left: 44%;
-  background: url("images/ecole.jpg") 50% 90% / cover no-repeat;
+  background: url("ecole.jpg") 50% 90% / cover no-repeat;
 }
 /* Panneau bleu en biais, bord droit qui s'estompe */
 .hero::after {
